@@ -1,0 +1,17 @@
+D:\Projetos\VS\ReplaceCapsToSmallCaps\bin\Debug\net7.0\ReplaceCapsToSmallCaps.exe
+D:\Projetos\VS\ReplaceCapsToSmallCaps\bin\Debug\net7.0\ReplaceCapsToSmallCaps.deps.json
+D:\Projetos\VS\ReplaceCapsToSmallCaps\bin\Debug\net7.0\ReplaceCapsToSmallCaps.runtimeconfig.json
+D:\Projetos\VS\ReplaceCapsToSmallCaps\bin\Debug\net7.0\ReplaceCapsToSmallCaps.dll
+D:\Projetos\VS\ReplaceCapsToSmallCaps\bin\Debug\net7.0\ReplaceCapsToSmallCaps.pdb
+D:\Projetos\VS\ReplaceCapsToSmallCaps\obj\Debug\net7.0\ReplaceCapsToSmallCaps.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\VS\ReplaceCapsToSmallCaps\obj\Debug\net7.0\ReplaceCapsToSmallCaps.AssemblyInfoInputs.cache
+D:\Projetos\VS\ReplaceCapsToSmallCaps\obj\Debug\net7.0\ReplaceCapsToSmallCaps.AssemblyInfo.cs
+D:\Projetos\VS\ReplaceCapsToSmallCaps\obj\Debug\net7.0\ReplaceCapsToSmallCaps.csproj.CoreCompileInputs.cache
+D:\Projetos\VS\ReplaceCapsToSmallCaps\obj\Debug\net7.0\ReplaceCapsToSmallCaps.dll
+D:\Projetos\VS\ReplaceCapsToSmallCaps\obj\Debug\net7.0\refint\ReplaceCapsToSmallCaps.dll
+D:\Projetos\VS\ReplaceCapsToSmallCaps\obj\Debug\net7.0\ReplaceCapsToSmallCaps.pdb
+D:\Projetos\VS\ReplaceCapsToSmallCaps\obj\Debug\net7.0\ReplaceCapsToSmallCaps.genruntimeconfig.cache
+D:\Projetos\VS\ReplaceCapsToSmallCaps\obj\Debug\net7.0\ref\ReplaceCapsToSmallCaps.dll
+D:\Projetos\VS\ReplaceCapsToSmallCaps\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\Projetos\VS\ReplaceCapsToSmallCaps\obj\Debug\net7.0\ReplaceCapsToSmallCaps.csproj.AssemblyReference.cache
+D:\Projetos\VS\ReplaceCapsToSmallCaps\obj\Debug\net7.0\ReplaceCapsToSmallCaps.csproj.CopyComplete
