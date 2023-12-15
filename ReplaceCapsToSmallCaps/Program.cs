@@ -1,7 +1,4 @@
 ﻿using System.IO;
-using System.Runtime.Serialization.Json;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Text.RegularExpressions;
 
 namespace ReplaceCapsToSmallCaps
 {
@@ -11,54 +8,99 @@ namespace ReplaceCapsToSmallCaps
         {
             try
             {
-                Console.WriteLine("Passsa o caminho do arquivo que quer alterar:");
+                Console.WriteLine("Passa o caminho do arquivo que quer diminuir as strings:");
+                string path = ReadLine();
 
-                string path = Console.ReadLine();
-                //string path = @"D:\Projetos\VSCode\SwaggerFiles\JSON\file2.json";
 
-                string trecho = "\"/api/";
-
+                //Console.WriteLine("passa o trecho que vc quer substituir:");
+                //String trecho = ReadLine();
+                String trecho = "\"/api/";
 
                 var logFile = File.ReadAllLines(path);
                 var logList = new List<string>(logFile);
 
                 for (int i = 0; i < logList.Count; i++)
                 {
-                    string line = logList[i];
+                                        
+                    ///////
+                    ///Esse trecho coloca as linhas das rotas dos endpoints em letras minusculas
+                    //////
+                    var line = logList[i];
+                    var line2 = line.Trim(' ').Replace(@"\\", "");
                     //string line2 = line.Replace("\t", "").Replace("\"", "").Trim(' ');
-                    string line2 = line.Trim(' ').Replace(@"\\", "");
-
                     if (line2.StartsWith(trecho))
                     {
-                        logList[i] = line.ToLower();
-
+                        var lineLowerCaps = line.ToLower();
+                        logList[i] = lineLowerCaps.ToString();
                     }
+
+
+                    ///////
+                    ///Esse trecho concatena as propriedades de Description, Summary e OperationID nos endpoints
+                    //////
+                    string concatena = "";
                     string[] actionsArray = new string[4] { "\"get\": {", "\"post\": {", "\"put\": {", "\"delete\": {" };
-                    bool contain = actionsArray.Any(a => line2.Equals(a));
-                    if (contain)
+                    bool equal = actionsArray.Any(a => line2.Equals(a));
+                    if (equal)
                     {
-                        string trechoAInserir = "\"description\": \"Description\",\r\n\"summary\": \"Summary\",\r\n\"operationId\": \"OperationID\",";
-                        logList[i] += trechoAInserir;
-                    }
+                        var response = "\"responses\": {";
+                        string trechoDescricao = "\"description\":\"\" ,";
+                        string trechoResumo = "\"summary\":\"\" ,";
+                        string trechoOperacaoID = "\"operationId\":\"\" ,";
+                        string[] propriedades = new string[3] { trechoDescricao, trechoResumo, trechoOperacaoID };
 
-                    Console.WriteLine(logList[i]);
+                        for (int j = 0; j < propriedades.Length; j++)
+                        {
+                            bool deveConcatenar = false;
+                            var propriedade = propriedades[j];//.Replace("\\", "").Replace("\"", "").Trim(' ');
+                                                              //var propriedade = propriedades[j].Trim(' ');
+                            int newIndex = i;
+                            while (true)
+                            {
+                                var proximoIndice = newIndex;
+                                if (proximoIndice >= logList.Count)
+                                    break;
+
+                                var proximaLinha = logList[proximoIndice];//.Replace("\\", "").Replace("\"", "");
+
+                                //se achou a propriedade, quebra o loop
+                                var propriedadeTratada = propriedade.Replace("\\", "").Replace("\"", "").Trim(' ');
+                                var proximaLinhaTratada = proximaLinha.Replace("\\", "").Replace("\"", "").Trim(' ');
+                                if (proximaLinhaTratada.Equals(propriedadeTratada))
+                                    break;
+
+                                //se não achou a propriedade, chegou até a proxima endpoint
+                                if (proximaLinha.StartsWith(trecho) || proximaLinha.Trim(' ').Contains(response))
+                                {
+                                    deveConcatenar = true;
+                                    concatena += propriedade;
+                                    break;
+                                }
+
+                                newIndex++;
+                            }
+                            if (deveConcatenar)
+                            {
+                                logList[i] += concatena;
+                                concatena = "";
+                            }
+                        }
+
+                        //logList[i] += concatena;
+                    }
 
 
                 }
+
                 File.WriteAllLines(path, logList);
 
-
-
-
-
-
+                //WriteLine(path);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.Write(ex.ToString());
+                WriteLine(e.Message.ToString());
             }
-
-
+            
         }
     }
 }

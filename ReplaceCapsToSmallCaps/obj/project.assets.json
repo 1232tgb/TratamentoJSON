@@ -61,11 +61,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projetos\\VS\\ReplaceCapsToSmallCaps\\ReplaceCapsToSmallCaps.csproj",
+      "projectUniqueName": "D:\\Github\\TratamentoJSON\\ReplaceCapsToSmallCaps\\ReplaceCapsToSmallCaps.csproj",
       "projectName": "ReplaceCapsToSmallCaps",
-      "projectPath": "D:\\Projetos\\VS\\ReplaceCapsToSmallCaps\\ReplaceCapsToSmallCaps.csproj",
+      "projectPath": "D:\\Github\\TratamentoJSON\\ReplaceCapsToSmallCaps\\ReplaceCapsToSmallCaps.csproj",
       "packagesPath": "C:\\Users\\Thiago\\.nuget\\packages\\",
-      "outputPath": "D:\\Projetos\\VS\\ReplaceCapsToSmallCaps\\obj\\",
+      "outputPath": "D:\\Github\\TratamentoJSON\\ReplaceCapsToSmallCaps\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
